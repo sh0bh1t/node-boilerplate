@@ -1,0 +1,32 @@
+{
+  "name" : "node-boilerplate",
+  "version" : "0.0.1",
+  "repository" : "https://github.com/ryanlelek/node-boilerplate.git",
+  "dependencies" : {
+    "express"         : "4.7.2",
+    "morgan"          : "1.2.2",
+    "body-parser"     : "1.5.2",
+    "method-override" : "2.1.2",
+    "basic-auth"      : "1.0.0",
+    "ejs"             : "1.0.0",
+    "lodash"          : "2.4.1",
+    "socket.io"       : "1.0.6"
+  },
+  "devDependencies" : {
+    "jshint"    : "2.5.2",
+    "mocha"     : "1.21.3",
+    "should"    : "4.0.4",
+    "supertest" : "0.13.0",
+    "sinon"     : "1.10.3",
+    "istanbul"  : "0.3.0"
+  },
+  "scripts" : {
+    "start" : "make start",
+    "test"  : "make test"
+  },
+  "engines" : {
+    "node" : "0.10.x",
+    "npm"  : "1.4.x"
+  },
+  "private" : true
+}

@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+<head>
+  <title>Socket.io Demo</title>
+</head>
+<body>
+
+  <ul id="messages"></ul>
+  <form id="message_form" action="#">
+    <div><strong><label for="content">Message:</label></strong> <input id="content" /></div>
+    <div><input type="submit" value="Send" /></div>
+  </form>
+
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="/socket.io/socket.io.js"></script>
+  <script>
+
+    $(document).ready(function () {
+
+      // Connect
+      var socket = io();
+
+      // On Message/Data
+      socket.on('message', function (data) {
+        messages.append("<li>" + data.content + "</li>");
+      });
+
+      // Messages
+      var messages = $("#messages");
+
+      $("#message_form").submit(function (e) {
+
+        e.preventDefault();
+
+        var handle = $("#content");
+
+        // Send Content
+        var content = handle.val();
+        socket.emit("message", {
+          content : content
+        });
+
+        // Clear
+        handle.val("");
+
+      });
+
+    });
+
+  </script>
+
+</body>
+</html>
